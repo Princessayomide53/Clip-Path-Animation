@@ -1,3 +1,78 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+  overscroll-behavior: none;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #f5f5f5;
+}
+
+@font-face {
+  font-family: 'Soria';
+  src: url('/fonts/soria-font.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.customFont {
+  font-family: 'Soria', sans-serif;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.letters > div {
+  flex: 1;
+  font-size: 18vw;
+  font: 400;
+  text-align: center;
+  color: #000;
+}
+
+.img-holder {
+  /* position: relative; */
+  /* top: 0;
+  width: 100%;
+  height: 100vh;
+  transform: rotate(30deg);
+  background-color: #fff; */
+  clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
+}
+
+.img-holder img {
+  position: relative;
+  transform: scale(2);
+}
+
+.row:nth-child(2) .img {
+  position: relative;
+  left: 50%;
+}
+
+.row:nth-child(3) .img {
+  position: relative;
+  left: 15%;
+}
+
+.row:nth-child(4) .img {
+  position: relative;
+  left: 70%;
+}
+
+.row:nth-child(6) p {
+  position: relative;
+  left: 30%;
+  margin: 4em 0;
+}
