@@ -51,7 +51,7 @@ img {
   clip-path: polygon(37.5% 20%, 62.5% 20%, 62.5% 80%, 37.5% 80%);
 }
 
-.img-holder img {
+.img-holder .imgs {
   position: relative;
   transform: scale(2);
 }

@@ -13,59 +13,78 @@ import ScrollTrigger from 'gsap/ScrollTrigger';
 
 export default function Home() {
   useEffect(() => {
-    document.addEventListener('DOMContentLoaded', function () {
-      gsap.registerPlugin(ScrollTrigger);
+    gsap.registerPlugin(ScrollTrigger);
 
-      const contentHolderHeight =
-        (document.querySelector('.content-holder') as HTMLElement)
-          ?.offsetHeight || 0;
+    // Directly run the code without waiting for DOMContentLoaded
+    const contentHolderEl = document.querySelector(
+      '.content-holder'
+    ) as HTMLElement | null;
+    const contentHolderHeight = contentHolderEl?.offsetHeight || 0;
 
-      const imgHolderHeight = window.innerHeight;
-      const additonalScrollHeight = window.innerHeight;
+    const imgHolderHeight = window.innerHeight;
+    const additionalScrollHeight = window.innerHeight;
 
-      const totalBodyHeight =
-        contentHolderHeight * imgHolderHeight * additonalScrollHeight;
-      document.body.style.height = `${totalBodyHeight}px`;
+    // Double-check the calculation—perhaps you meant to add rather than multiply?
+    const totalBodyHeight =
+      contentHolderHeight + imgHolderHeight + additionalScrollHeight;
+    document.body.style.height = `${totalBodyHeight}px`;
 
-      ScrollTrigger.create({
-        trigger: '.website-content',
-        start: '-0.1% top',
-        end: 'bottom bottom',
-        onEnter: () => {
-          gsap.set('.website-content', {
-            position: 'absolute',
-            top: '195px',
-          });
-        },
-        onLeave: () => {
-          gsap.set('.website-content', {
-            position: 'fixed',
-            top: '0',
-          });
-        },
-      });
-      gsap.to('.header .letters:first-child', {
-        x: () => -innerWidth * 3,
-        scale: 10,
-        ease: 'power2.inOut',
-        scrollTrigger: {
-          start: 'top top',
-          end: '+= 200%',
-          scrub: 1,
-        },
-      });
-
-      gsap.to('.header .letters:last-child', {
-        x: () => innerWidth * 3,
-        scale: 10,
-        ease: 'power2.inOut',
-        scrollTrigger: {
-          start: 'top top',
-          end: '+= 200%',
-          scrub: 1,
-        },
-      });
+    // Set up ScrollTrigger for fixed/floating behavior
+    ScrollTrigger.create({
+      trigger: '.website-content',
+      start: '-0.1% top',
+      end: 'bottom bottom',
+      onEnter: () => {
+        gsap.set('.website-content', { position: 'absolute', top: '195%' });
+      },
+      onLeaveBack: () => {
+        gsap.set('.website-content', { position: 'fixed', top: '0' });
+      },
     });
+
+    gsap.to('.header .letters:first-child', {
+      x: () => -innerWidth * 3,
+      scale: 10,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        start: 'top top',
+        end: '+=200%',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.header .letters:last-child', {
+      x: () => innerWidth * 3,
+      scale: 10,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        start: 'top top',
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.img-holder', {
+      rotation: 0,
+      clipPath: `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        start: 'top top',
+        end: '+=200%',
+        scrub: 1,
+      },
+    });
+
+    gsap.to('.img-holder .imgs', {
+      scale: 1,
+      ease: 'power2.inOut',
+      scrollTrigger: {
+        start: 'top top',
+        end: `+=200%`,
+        scrub: 1,
+      },
+    });
+    // });
   }, []);
   return (
     <div>
@@ -86,13 +105,8 @@ export default function Home() {
       </div>
 
       <div className='website-content fixed top-0 w-full min-h-[100vh]'>
-        <div className='img-holder transform rotate-[30deg] relative top-0 w-[100%] h-[100vh] bg-white '>
-          <Image
-            src={art1}
-            alt='Website image'
-            priority
-            // className='object-contain'
-          />
+        <div className='img-holder transform rotate-[30deg] relative top-0 w-full h-[100vh] bg-white '>
+          <Image src={art5} alt='Website image' priority className='imgs' />
         </div>
         <div className='content-holder relative top-[-5px] w-full bg-[#000] text-white p-[1em]'>
           <div className='row mx-[2em] my-[1em] '>
