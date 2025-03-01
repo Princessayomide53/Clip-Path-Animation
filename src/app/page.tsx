@@ -34,11 +34,13 @@ export default function Home() {
       trigger: '.website-content',
       start: '-0.1% top',
       end: 'bottom bottom',
+      // pin: true,
+      scrub: 1,
       onEnter: () => {
-        gsap.set('.website-content', { position: 'absolute', top: '195%' });
+        gsap.set('.website-content', { position: 'fixed', top: '0%' });
       },
       onLeaveBack: () => {
-        gsap.set('.website-content', { position: 'fixed', top: '0' });
+        gsap.set('.website-content', { position: 'absolute', top: '0' });
       },
     });
 
@@ -66,7 +68,7 @@ export default function Home() {
 
     gsap.to('.img-holder', {
       rotation: 0,
-      clipPath: `polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)`,
+      clipPath: 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)',
       ease: 'power2.inOut',
       scrollTrigger: {
         start: 'top top',
