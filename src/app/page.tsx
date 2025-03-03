@@ -34,13 +34,11 @@ export default function Home() {
       trigger: '.website-content',
       start: '-0.1% top',
       end: 'bottom bottom',
-      // pin: true,
-      scrub: 1,
       onEnter: () => {
-        gsap.set('.website-content', { position: 'fixed', top: '0%' });
+        gsap.set('.website-content', { position: 'absolute', top: '100%' });
       },
       onLeaveBack: () => {
-        gsap.set('.website-content', { position: 'absolute', top: '0' });
+        gsap.set('.website-content', { position: 'fixed', top: '0' });
       },
     });
 
@@ -90,15 +88,15 @@ export default function Home() {
   }, []);
   return (
     <div>
-      <div className='logo fixed top-0 right-0 w-[1.5rem] h-[1.5rem] bg-red-200 m-[2em] rounded-full z-[1000]'></div>
-      <div className='header transform -translate-y-[50%] -translate-x-[50%] customFont fixed top-[50%] left-[50%] z-[100] flex w-full'>
-        <div className='letters flex-1 flex uppercase '>
+      <div className='logo '></div>
+      <div className='header '>
+        <div className='letters'>
           <div>a</div>
           <div>r</div>
           <div>t</div>
           <div>w</div>
         </div>
-        <div className='letters flex-1 flex uppercase'>
+        <div className='letters'>
           <div>o</div>
           <div>r</div>
           <div>k</div>
@@ -106,50 +104,48 @@ export default function Home() {
         </div>
       </div>
 
-      <div className='website-content fixed top-0 w-full min-h-[100vh]'>
-        <div className='img-holder transform rotate-[30deg] relative top-0 w-full h-[100vh] bg-white '>
+      <div className='website-content'>
+        <div className='img-holder '>
           <Image src={art5} alt='Website image' priority className='imgs' />
         </div>
-        <div className='content-holder relative top-[-5px] w-full bg-[#000] text-white p-[1em]'>
-          <div className='row mx-[2em] my-[1em] '>
-            <h1 className='text-[5rem] font-normal uppercase tracking-[-0.02em]'>
-              History
-            </h1>
+        <div className='content-holder '>
+          <div className='row '>
+            <h1 className=''>History</h1>
           </div>
 
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <div className='img w-[200px] h-[275px]'>
               <Image src={art1} alt='History1' priority />
             </div>
           </div>
 
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <div className='img w-[200px] h-[275px]'>
               <Image src={art2} alt='History2' priority />
             </div>
           </div>
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <div className='img w-[200px] h-[275px]'>
               <Image src={art3} alt='History3' priority />
             </div>
           </div>
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <div className='img w-[200px] h-[275px]'>
               <Image src={art4} alt='History4' priority />
             </div>
           </div>
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <div className='img w-[200px] h-[275px]'>
               <Image src={art6} alt='History5' priority />
             </div>
           </div>
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <div className='img w-[200px] h-[275px]'>
               <Image src={art7} alt='History6' priority />
             </div>
           </div>
 
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <p className='text-lg font-normal leading-[1.5rem] w-[50%]'>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
               nam suscipit aliquam iste, corrupti voluptate in nostrum cumque
@@ -157,21 +153,21 @@ export default function Home() {
             </p>
           </div>
 
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
               nam suscipit aliquam iste, corrupti voluptate in nostrum cumque
               accusantium ex!
             </p>
           </div>
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
               nam suscipit aliquam iste, corrupti voluptate in nostrum cumque
               accusantium ex!
             </p>
           </div>
-          <div className='row mx-[2em] my-[1em]'>
+          <div className='row'>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam
               nam suscipit aliquam iste, corrupti voluptate in nostrum cumque
