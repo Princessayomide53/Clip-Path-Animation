@@ -42,8 +42,8 @@ p {
 
 img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: 100vh;
+  object-fit: fill;
 }
 
 .logo {
@@ -76,7 +76,7 @@ img {
 
 .letters > div {
   flex: 1;
-  font-size: 18vw;
+  font-size: 8vw;
   font: 400;
   text-align: center;
   color: #000;
