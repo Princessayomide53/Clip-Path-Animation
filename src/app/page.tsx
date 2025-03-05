@@ -108,8 +108,8 @@ export default function Home() {
       </div>
 
       <div className='website-content fixed top-0 w-full min-h-[100vh]'>
-        <div className='img-holder transform rotate-[30deg] relative top-0 w-full h-[100vh] bg-white '>
-          <Image src={art5} alt='Website image' priority className='imgs' />
+        <div className='img-holder transform rotate-[30deg] relative top-0 w-full h-auto bg-white '>
+          <Image src={art1} alt='Website image' priority className='imgs' />
         </div>
         <div className='content-holder relative top-[-5px] w-full bg-[#000] text-white p-[1em]'>
           <div className='row mx-[2em] my-[1em] '>
@@ -119,33 +119,33 @@ export default function Home() {
           </div>
 
           <div className='row mx-[2em] my-[1em]'>
-            <div className='img w-[200px] h-[275px]'>
-              <Image src={art1} alt='History1' priority />
+            <div className='img w-[200px] h-[275px] lg:w-[300px] lg:h-[375px]'>
+              <Image src={art5} alt='History1' priority />
             </div>
           </div>
 
           <div className='row mx-[2em] my-[1em]'>
-            <div className='img w-[200px] h-[275px]'>
+            <div className='img w-[200px] h-[275px] lg:w-[300px] lg:h-[375px]'>
               <Image src={art2} alt='History2' priority />
             </div>
           </div>
           <div className='row mx-[2em] my-[1em]'>
-            <div className='img w-[200px] h-[275px]'>
+            <div className='img w-[200px] h-[275px] lg:w-[300px] lg:h-[375px]'>
               <Image src={art3} alt='History3' priority />
             </div>
           </div>
           <div className='row mx-[2em] my-[1em]'>
-            <div className='img w-[200px] h-[275px]'>
+            <div className='img w-[200px] h-[275px] lg:w-[300px] lg:h-[375px]'>
               <Image src={art4} alt='History4' priority />
             </div>
           </div>
           <div className='row mx-[2em] my-[1em]'>
-            <div className='img w-[200px] h-[275px]'>
+            <div className='img w-[200px] h-[275px] lg:w-[300px] lg:h-[375px]'>
               <Image src={art6} alt='History5' priority />
             </div>
           </div>
           <div className='row mx-[2em] my-[1em]'>
-            <div className='img w-[200px] h-[275px]'>
+            <div className='img w-[200px] h-[275px] lg:w-[300px] lg:h-[375px]'>
               <Image src={art7} alt='History6' priority />
             </div>
           </div>
